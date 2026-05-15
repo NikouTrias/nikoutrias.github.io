@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jane Doe, MA | Licensed Therapist | [Your City]</title>
+    <!-- Simple SEO -->
+    <meta name="description" content="Compassionate, evidence-based therapy in [Your City] specializing in anxiety, stress, and personal growth.">
+    <style>
+        /* --- CORE STYLES & PASTEL GREEN PALETTE --- */
+        :root {
+            --pastel-sage: #B4C6A6; /* Soft main background/accent */
+            --pastel-mint: #DAE5D0; /* Very light section background */
+            --pastel-cream: #FFFDF9; /* Clean text background */
+            --text-dark: #334433; /* Dark green-grey for contrast */
+            --btn-green: #90A985; /* Action color */
+            --btn-hover: #7B946F;
+            --navbar-bg: rgba(255, 253, 249, 0.95); /* Transparent Cream */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            /* Smooth native scrolling */
+            scroll-behavior: smooth;
+            font-size: 18px;
+            color: var(--text-dark);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        body {
+            background-color: var(--pastel-cream);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #2c3e2c; /* Slightly deeper green for headers */
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--btn-green);
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--btn-hover);
+        }
+
+        /* --- LAYOUT UTILITIES --- */
+        section {
+            padding: 100px 20px; /* Vertical padding creates scrolling space */
+            min-height: 100vh; /* Every section takes up at least full screen */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* --- NAVBAR --- */
+        header {
+            background-color: var(--navbar-bg);
+            position: fixed; /* Stays at top */
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--text-dark);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        /* Animated underline effect for navigation links */
+        .nav-links a {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-dark);
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--btn-green);
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+
+        .nav-links a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        /* --- HERO SECTION --- */
+        #home {
+            background-color: var(--pastel-sage);
+            color: white;
+            text-align: center;
+        }
+
+        #home h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+            opacity: 0.9;
+        }
+
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background-color: #fcfcfc; 
+            margin-bottom: 2rem;
+            display: inline-block;
+            overflow: hidden;
+            border: 5px solid rgba(255,255,255,0.3);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* --- ABOUT & SERVICES --- */
+        #about {
+            background-color: var(--pastel-cream);
+        }
+
+        #services {
+            background-color: var(--pastel-mint);
+        }
+        
+        .credentials {
+            font-style: italic;
+            color: #666;
+            margin-top: -10px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .specialties {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .specialty-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 250px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            border: 1px solid #eee;
+        }
+
+        /* --- CONTACT --- */
+        #contact {
+            background-color: var(--pastel-cream);
+            min-height: 80vh;
+        }
+
+        /* --- BUTTONS --- */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--btn-green);
+            color: white !important;
+            border-radius: 25px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--btn-hover);
+        }
+
+        /* --- ANIMATION COMPONENTS --- */
+
+        /* Initial state: hidden and slightly pushed down */
+        .fade-in-element {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, transform;
+        }
+
+        /* Active state: triggered by JS when element is on screen */
+        .fade-in-element.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Subtle pulsating effect for the hero button */
+        @keyframes soft-pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(144, 169, 133, 0.5); }
+            70% { transform: scale(1.03); box-shadow: 0 0 0 10px rgba(144, 169, 133, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(144, 169, 133, 0); }
+        }
+
+        .pulse-btn {
+            animation: soft-pulse 3s infinite;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #f4f4f4;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        /* --- MOBILE RESPONSIVENESS --- */
+        @media (max-width: 768px) {
+            html { font-size: 16px; }
+            #home h1 { font-size: 2.2rem; }
+            .nav-links { gap: 15px; }
+            .specialties { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- STICKY NAVBAR -->
+    <header>
+        <nav>
+            <div class="logo">Jane Doe, MA</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 1. HERO/HOME SECTION (Includes breathing action button) -->
+    <section id="home">
+        <div class="container">
+            <div class="profile-photo">
+                <!-- Direct reference to your image file -->
+                <img src="headshot.jpg" alt="Jane Doe, Therapist Headshot">
+            </div>
+            <h1>A Space for Growth</h1>
+            <p class="hero-subtitle">Compassionate, evidence-based therapy for individuals navigating anxiety, life transitions, and self-discovery in [Your City/State].</p>
+            <a href="#contact" class="btn pulse-btn">Request a Consultation</a>
+        </div>
+    </section>
+
+    <!-- 2. ABOUT ME SECTION (Scroll Fade-In) -->
+    <section id="about">
+        <div class="container fade-in-element">
+            <h2>Meet Jane Doe</h2>
+            <span class="credentials">Master of Arts in Counseling Psychology</span>
+            <p>Welcome. I believe therapy is a collaborative process where you are the expert on your own life. With several years of experience and a Master’s degree from [University Name], I provide a warm, non-judgmental environment to help you explore your challenges.</p>
+            <p>My approach is integrative, drawing primarily from Cognitive Behavioral Therapy (CBT) and Mindfulness-based techniques. I focus on actionable strategies that empower you to make meaningful changes.</p>
+        </div>
+    </section>
+
+    <!-- 3. SERVICES SECTION (Scroll Fade-In) -->
+    <section id="services">
+        <div class="container fade-in-element">
+            <h2>Specializations</h2>
+            <p>I offer individual therapy sessions (50 minutes) both in-person and via tele-health. My primary areas of focus include:</p>
+            
+            <div class="specialties">
+                <div class="specialty-item">
+                    <h3>Anxiety & Stress</h3>
+                    <p>Managing overwhelmed thoughts and finding calm in daily life.</p>
+                </div>
+                <div class="specialty-item">
+                    <h3>Life Transitions</h3>
+                    <p>Navigating career changes, relationship shifts, and identity growth.</p>
+                </div>
+                <div class="specialty-item">
+                    <h3>Personal Growth</h3>
+                    <p>Building self-esteem and understanding your deeper patterns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. CONTACT SECTION (Scroll Fade-In) -->
+    <section id="contact">
+        <div class="container fade-in-element">
+            <h2>Begin Your Journey</h2>
+            <p>I offer a free, initial 15-minute consultation to ensure we are a good fit before beginning therapeutic work.</p>
+            <p>My office is located in [Neighborhood/City] and is accessible via [Transit info].</p>
+            
+            <p><strong>To inquire about availability and rates, please click below:</strong></p>
+            <br>
+            <a href="https://yoursecurebookinglink.com" target="_blank" rel="noopener" class="btn">Book Free Consultation</a>
+            <p style="margin-top: 15px; font-size: 0.8rem; color: #777;">*Secure, HIPAA-compliant portal.</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Jane Doe Psychology. All Rights Reserved.</p>
+        <p>This website does not constitute a therapist-client relationship and is for informational purposes only.</p>
+    </footer>
+
+    <!-- JAVASCRIPT INTERSECTION OBSERVER FOR SCROLL ANIMATIONS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const fadingElements = document.querySelectorAll(".fade-in-element");
+
+            // Setup the observer to look out for elements appearing on screen
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    // When element is 10% on screen, add the visible class
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                        observer.unobserve(entry.target); // Stops watching once animated
+                    }
+                });
+            }, {
+                threshold: 0.1 
+            });
+
+            fadingElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+
+</body>
+</html>
